@@ -3,9 +3,11 @@ package org.example.hexlet;
 import io.javalin.Javalin;
 import io.javalin.rendering.template.JavalinJte;
 import org.example.hexlet.dto.courses.CoursePage;
+import org.example.hexlet.dto.courses.CoursesPage;
 import org.example.hexlet.model.Course;
 
 import java.util.List;
+import java.util.Objects;
 
 import static io.javalin.rendering.template.TemplateUtil.model;
 
@@ -17,16 +19,22 @@ public class HelloWorld {
         });
 
         List<Course> listOfCourses = List.of(
-                new Course("Курс по JS", "Лучший курс в РФ!"),
-                new Course("Курс по PHP", "Лучший курс в СНГ!"),
-                new Course("Курс по JAVA", "Лучший курс в СССР!")
+                new Course(1L, "Курс по JS", "Лучший курс в РФ!"),
+                new Course(2L, "Курс по PHP", "Лучший курс в СНГ!"),
+                new Course(3L, "Курс по JAVA", "Лучший курс в СССР!")
         );
+
+        app.get("/courses", ctx -> {
+            CoursesPage page = new CoursesPage("Список доступных курсов", listOfCourses);
+            ctx.render("courses/pages/courses.jte", model("coursesPage", page));
+        });
 
         app.get("/courses/{id}", ctx -> {
             Long id = ctx.pathParamAsClass("id", Long.class).get();
-            CoursePage page = new CoursePage(listOfCourses, "Курсы");
+            Course course = listOfCourses.stream().filter(o -> Objects.equals(o.getId(), id)).toList().getFirst();
+            CoursePage page = new CoursePage("Курс: " + course.getTitle(), course);
 
-            ctx.render("courses/index.jte", model("page", page));
+            ctx.render("courses/pages/course.jte", model("coursePage", page));
         });
         app.start(7070);
     }
