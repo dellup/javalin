@@ -9,6 +9,10 @@
         @if (coursesPage.getCourses().isEmpty())
         <p>Пользователей пока нет.</p>
         @else
+        <form action="/courses" method="get">
+            <input type="search" required name="term" value="${coursesPage.getTerm()}">
+            <input type="submit" value="Искать">
+        </form>
         <table class="table">
             <thead>
             <tr>

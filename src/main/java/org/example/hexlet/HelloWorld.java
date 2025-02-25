@@ -20,12 +20,20 @@ public class HelloWorld {
 
         List<Course> listOfCourses = List.of(
                 new Course(1L, "Курс по JS", "Лучший курс в РФ!"),
-                new Course(2L, "Курс по PHP", "Лучший курс в СНГ!"),
-                new Course(3L, "Курс по JAVA", "Лучший курс в СССР!")
+                new Course(2L, "Курс по PHP", "Лучший курс в СНГ?"),
+                new Course(3L, "Курс по JAVA", "Лучший курс в СССР?")
         );
 
         app.get("/courses", ctx -> {
-            CoursesPage page = new CoursesPage("Список доступных курсов", listOfCourses);
+            var term = ctx.queryParam("term");
+            List<Course> courses;
+            if (term != null) {
+                courses = listOfCourses.stream().filter(o -> o.getDescription().contains(term)).toList();
+            } else {
+                courses = listOfCourses;
+            }
+            CoursesPage page = new CoursesPage("Список доступных курсов", courses, term);
+            ctx.contentType("text/html; charset=utf-8");
             ctx.render("courses/pages/courses.jte", model("coursesPage", page));
         });
 
@@ -33,6 +41,7 @@ public class HelloWorld {
             Long id = ctx.pathParamAsClass("id", Long.class).get();
             Course course = listOfCourses.stream().filter(o -> Objects.equals(o.getId(), id)).toList().getFirst();
             CoursePage page = new CoursePage("Курс: " + course.getTitle(), course);
+            ctx.contentType("text/html; charset=utf-8");
 
             ctx.render("courses/pages/course.jte", model("coursePage", page));
         });
