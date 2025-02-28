@@ -1,6 +1,7 @@
 package org.example.hexlet.dto.courses;
 
 import lombok.Getter;
+import org.example.hexlet.dto.Page;
 import org.example.hexlet.model.Course;
 
 import java.util.List;

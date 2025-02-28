@@ -5,13 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38bd6222-09aa-4dd3-9a4a-138235c67b1c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/hexlet/dto/users/UserPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/hexlet/dto/users/UsersPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/hexlet/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/hexlet/repository/CourseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/hexlet/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/jte/pages/user.jte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/jte/pages/users.jte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/jte/users/build.jte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/courses/JteindexGenerated.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/courses/JteindexGenerated.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/courses/pages/JtecourseGenerated$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/courses/pages/JtecourseGenerated.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/courses/pages/JtecourseGenerated.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/courses/pages/JtecoursesGenerated$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/courses/pages/JtecoursesGenerated.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/courses/pages/JtecoursesGenerated.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/hexlet/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/hexlet/HelloWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/hexlet/dto/courses/CoursePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/hexlet/dto/courses/CoursePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/hexlet/dto/courses/CoursesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/hexlet/dto/courses/CoursesPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/jte/courses/pages/courses.jte" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/jte/courses/pages/courses.jte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/hexlet/dto/courses/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/hexlet/dto/Page.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/jte/courses/index.jte" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/jte/index.jte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/jte/courses/pages/course.jte" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/jte/pages/course.jte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/jte/courses/pages/courses.jte" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/jte/pages/courses.jte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,16 +103,24 @@
     "Gradle.javalin [build].executor": "Run",
     "Gradle.javalin [run].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "//wsl.localhost/Ubuntu/home/dellup/Hexlet/hexlet-assignments/java-web-ru/layout",
+    "last_opened_file_path": "C:/Users/zenin/ITMO/javalin/src/main/java/org/example/hexlet/dto/users",
     "onboarding.tips.debug.path": "C:/Users/zenin/ITMO/javalin/src/main/java/org/example/Main.java",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "File.Encoding"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\zenin\ITMO\javalin\src\main\java\org\example\hexlet\dto\users" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\zenin\ITMO\javalin\src\main\jte" />
       <recent name="C:\Users\zenin\ITMO\javalin\src\main\jte\courses\pages" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.example.hexlet.dto" />
     </key>
   </component>
   <component name="RunManager" selected="Gradle.javalin [run]">
@@ -124,7 +151,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -133,7 +160,7 @@
             <option value="run" />
           </list>
         </option>
-        <option name="vmOptions" />
+        <option name="vmOptions" value="-Dfile.encoding=UTF-8" />
       </ExternalSystemSettings>
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
@@ -141,6 +168,10 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Gradle.javalin [build]" />
+      <item itemvalue="Gradle.javalin [run]" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.javalin [run]" />
