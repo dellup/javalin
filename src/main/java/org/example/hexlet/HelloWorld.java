@@ -2,9 +2,11 @@ package org.example.hexlet;
 
 import io.javalin.Javalin;
 import io.javalin.rendering.template.JavalinJte;
+import io.javalin.validation.ValidationException;
 import org.example.hexlet.dto.courses.CoursePage;
 import org.example.hexlet.dto.courses.CoursesPage;
 import org.example.hexlet.dto.Page;
+import org.example.hexlet.dto.users.BuildUserPage;
 import org.example.hexlet.dto.users.UserPage;
 import org.example.hexlet.dto.users.UsersPage;
 import org.example.hexlet.model.Course;
@@ -55,7 +57,7 @@ public class HelloWorld {
         });
 
         app.get("/users/build", ctx -> {
-            Page page = new Page("Создание пользователя");
+            var page = new BuildUserPage();
             ctx.render("users/build.jte", model("buildPage", page));
         });
 
@@ -63,12 +65,20 @@ public class HelloWorld {
             ctx.contentType("text/html; charset=utf-8");
             var name = ctx.formParam("name").trim();
             var email = ctx.formParam("email").toLowerCase().trim();
-            var password = ctx.formParam("password");
-            var passwordConfirmation = ctx.formParam("passwordConfirmation");
+            try {
+                var passwordConfirmation = ctx.formParam("passwordConfirmation");
+                var password = ctx.formParamAsClass("password", String.class)
+                        .check(o -> o.equals(passwordConfirmation), "Пароли не совпадают")
+                        .get();
+                var user = new User(name, email, password);
+                UserRepository.save(user);
+                ctx.redirect("/users");
+            } catch (ValidationException e) {
+                BuildUserPage page = new BuildUserPage("Заполните форму заново", name, email, e.getErrors());
+                ctx.render("users/build.jte", model("buildPage", page));
+            }
 
-            var user = new User(name, email, password);
-            UserRepository.save(user);
-            ctx.redirect("/users");
+
         });
 
         app.get("/users", ctx -> {

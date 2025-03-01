@@ -1,5 +1,5 @@
-@import org.example.hexlet.dto.Page
-@param Page buildPage
+@import org.example.hexlet.dto.users.BuildUserPage
+@param BuildUserPage buildPage
 @template.index(
 page = buildPage,
 content = @`
@@ -7,13 +7,13 @@ content = @`
     <div>
         <label>
             Имя
-            <input type="text" name="name" />
+            <input type="text" name="name" value="${buildPage.getName()}"/>
         </label>
     </div>
     <div>
         <label>
             Email
-            <input type="email" required name="email" />
+            <input type="email" required name="email" value="${buildPage.getEmail()}"/>
         </label>
     </div>
     <div>
