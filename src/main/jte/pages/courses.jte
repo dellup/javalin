@@ -1,5 +1,6 @@
 @import org.example.hexlet.dto.courses.CoursesPage
 @import org.example.hexlet.model.Course
+@import org.example.hexlet.dto.NamedRoutes
 @param CoursesPage coursesPage
 
 @template.index(
@@ -9,7 +10,7 @@
         @if (coursesPage.getCourses().isEmpty())
         <p>Такого курса нет или курсы еще не добавлены</p>
         @else
-        <form action="/courses" method="get">
+        <form action="${NamedRoutes.coursesPath()}" method="get">
             <input type="search" required name="term" value="${coursesPage.getTerm()}">
             <input type="submit" value="Искать">
         </form>
@@ -24,7 +25,7 @@
             <tbody>
             @for (Course course : coursesPage.getCourses())
             <tr>
-                <th scope="row"><a href="/courses/${course.getId()}">${course.getId()}</a></th>
+                <th scope="row"><a href="${NamedRoutes.coursePath(course.getId())}">${course.getId()}</a></th>
                 <td>${course.getTitle()}</td>
                 <td>${course.getDescription()}</td>
             </tr>

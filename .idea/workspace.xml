@@ -5,20 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38bd6222-09aa-4dd3-9a4a-138235c67b1c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/hexlet/dto/NamedRoutes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/hexlet/dto/controllers/CoursesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/hexlet/dto/controllers/UsersController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/pages/JtecourseGenerated$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/pages/JtecourseGenerated.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/pages/JtecourseGenerated.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/pages/JtecoursesGenerated$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/pages/JtecoursesGenerated.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/pages/JtecoursesGenerated.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/pages/JteuserGenerated$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/pages/JteuserGenerated.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/pages/JteuserGenerated.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/users/JtebuildGenerated$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/users/JtebuildGenerated$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/users/JtebuildGenerated.class" beforeDir="false" afterPath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/users/JtebuildGenerated.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/users/JtebuildGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/users/JtebuildGenerated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/JteindexGenerated.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/JteindexGenerated.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/pages/JteusersGenerated$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/pages/JteusersGenerated.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/pages/JteusersGenerated.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/users/JtebuildGenerated$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/users/JtebuildGenerated.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/users/JtebuildGenerated.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/hexlet/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/hexlet/HelloWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/jte/pages/courses.jte" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/jte/pages/courses.jte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/jte/pages/users.jte" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/jte/pages/users.jte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/jte/users/build.jte" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/jte/users/build.jte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -140,7 +141,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" value="--info" />
         <option name="taskDescriptions">
           <list />
         </option>

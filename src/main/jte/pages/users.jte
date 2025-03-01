@@ -1,4 +1,5 @@
 @import org.example.hexlet.dto.users.UsersPage
+@import org.example.hexlet.dto.NamedRoutes
 @import org.example.hexlet.model.User
 @param UsersPage usersPage
 
@@ -9,7 +10,7 @@ content = @`
     @if (usersPage.getUsers().isEmpty())
     <p>Пользователей пока нет.</p>
     @else
-    <form action="/users" method="get">
+    <form action="${NamedRoutes.usersPath()}" method="get">
         <input type="search" required name="term" value="${usersPage.getTerm()}">
         <input type="submit" value="Искать">
     </form>
@@ -25,7 +26,7 @@ content = @`
         <tbody>
         @for (User user : usersPage.getUsers())
         <tr>
-            <th scope="row"><a href="/users/${user.getId()}">${user.getId()}</a></th>
+            <th scope="row"><a href="${NamedRoutes.userPath(user.getId())}">${user.getId()}</a></th>
             <td>${user.getName()}</td>
             <td>${user.getEmail()}</td>
             <td>${user.getCreatedAt().toString()}</td>

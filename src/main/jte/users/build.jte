@@ -1,9 +1,19 @@
 @import org.example.hexlet.dto.users.BuildUserPage
+@import org.example.hexlet.dto.NamedRoutes
 @param BuildUserPage buildPage
 @template.index(
 page = buildPage,
 content = @`
-<form action="/users" method="post" class="p-4">
+@if(buildPage.getErrors() != null)
+<ul>
+    @for(var validator : buildPage.getErrors().values())
+        @for(var error : validator)
+            <li>${error.getMessage()}</li>
+        @endfor
+    @endfor
+</ul>
+@endif
+<form action="${NamedRoutes.usersPath()}" method="post" class="p-4">
     <div>
         <label>
             Имя

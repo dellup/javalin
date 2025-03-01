@@ -3,6 +3,10 @@ package org.example.hexlet;
 import io.javalin.Javalin;
 import io.javalin.rendering.template.JavalinJte;
 import io.javalin.validation.ValidationException;
+import org.eclipse.jetty.server.Authentication;
+import org.example.hexlet.dto.NamedRoutes;
+import org.example.hexlet.dto.controllers.CoursesController;
+import org.example.hexlet.dto.controllers.UsersController;
 import org.example.hexlet.dto.courses.CoursePage;
 import org.example.hexlet.dto.courses.CoursesPage;
 import org.example.hexlet.dto.Page;
@@ -32,81 +36,19 @@ public class HelloWorld {
                 new Course(2L, "Курс по PHP", "Лучший курс в СНГ?"),
                 new Course(3L, "Курс по JAVA", "Лучший курс в СССР?")
         );
-        listOfCourses.forEach(CourseRepository::save); ;
+        listOfCourses.forEach(CourseRepository::save);
 
-        app.get("/courses", ctx -> {
-            var term = ctx.queryParam("term");
-            List<Course> courses;
-            if (term != null) {
-                courses = CourseRepository.search(term);
-            } else {
-                courses = CourseRepository.getEntities();
-            }
-            CoursesPage page = new CoursesPage("Список доступных курсов", courses, term);
-            ctx.contentType("text/html; charset=utf-8");
-            ctx.render("pages/courses.jte", model("coursesPage", page));
-        });
+        app.get(NamedRoutes.coursesPath(), CoursesController::index);
 
-        app.get("/courses/{id}", ctx -> {
-            Long id = ctx.pathParamAsClass("id", Long.class).get();
-            Course course = CourseRepository.find(id).get();
-            CoursePage page = new CoursePage("Курс: " + course.getTitle(), course);
-            ctx.contentType("text/html; charset=utf-8");
+        app.get(NamedRoutes.coursePath("{id}"), CoursesController::show);
 
-            ctx.render("pages/course.jte", model("coursePage", page));
-        });
+        app.get(NamedRoutes.buildUserPath(), UsersController::build);
 
-        app.get("/users/build", ctx -> {
-            var page = new BuildUserPage();
-            ctx.render("users/build.jte", model("buildPage", page));
-        });
+        app.post(NamedRoutes.usersPath(), UsersController::create);
 
-        app.post("/users", ctx -> {
-            ctx.contentType("text/html; charset=utf-8");
-            var name = ctx.formParam("name").trim();
-            var email = ctx.formParam("email").toLowerCase().trim();
-            try {
-                var passwordConfirmation = ctx.formParam("passwordConfirmation");
-                var password = ctx.formParamAsClass("password", String.class)
-                        .check(o -> o.equals(passwordConfirmation), "Пароли не совпадают")
-                        .get();
-                var user = new User(name, email, password);
-                UserRepository.save(user);
-                ctx.redirect("/users");
-            } catch (ValidationException e) {
-                BuildUserPage page = new BuildUserPage("Заполните форму заново", name, email, e.getErrors());
-                ctx.render("users/build.jte", model("buildPage", page));
-            }
+        app.get(NamedRoutes.usersPath(), UsersController::index);
 
-
-        });
-
-        app.get("/users", ctx -> {
-            var term = ctx.queryParam("term");
-            List<User> users;
-            if (term != null) {
-                users = UserRepository.search(term);
-            } else {
-                users = UserRepository.getEntities();
-            }
-            UsersPage page = new UsersPage("Список пользователей", users, term);
-            ctx.contentType("text/html; charset=utf-8");
-            ctx.render("pages/users.jte", model("usersPage", page));
-        });
-
-        app.get("/users/{id}", ctx -> {
-            Long id = ctx.pathParamAsClass("id", Long.class).get();
-            Optional<User> user = UserRepository.find(id);
-            ctx.contentType("text/html; charset=utf-8");
-            if (user.isEmpty()) {
-                ctx.status(404).result("Пользователь не найден");
-                return;
-            }
-            UserPage page = new UserPage("Пользователь: " + user.get().getName(), user.get());
-
-
-            ctx.render("pages/user.jte", model("userPage", page));
-        });
+        app.get(NamedRoutes.userPath("{id}"), UsersController::show);
 
         app.start(7070);
     }
