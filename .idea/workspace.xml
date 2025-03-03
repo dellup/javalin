@@ -5,12 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38bd6222-09aa-4dd3-9a4a-138235c67b1c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/hexlet/dto/NamedRoutes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/hexlet/dto/controllers/CoursesController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/hexlet/dto/controllers/UsersController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/hexlet/dto/MainPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/jte/main.jte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/JteindexGenerated.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/JteindexGenerated.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/pages/JtecoursesGenerated$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/pages/JtecoursesGenerated.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/pages/JtecoursesGenerated.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/pages/JteuserGenerated$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/pages/JteuserGenerated.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/pages/JteuserGenerated.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/pages/JteusersGenerated$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/pages/JteusersGenerated.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/pages/JteusersGenerated.java" beforeDir="false" />
@@ -18,9 +23,6 @@
       <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/users/JtebuildGenerated.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/jte-classes/gg/jte/generated/ondemand/users/JtebuildGenerated.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/hexlet/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/hexlet/HelloWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/jte/pages/courses.jte" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/jte/pages/courses.jte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/jte/pages/users.jte" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/jte/pages/users.jte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/jte/users/build.jte" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/jte/users/build.jte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +37,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
@@ -55,12 +60,6 @@
                 <item name="javalin" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="application" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="javalin" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -90,6 +89,8 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Gradle.Javalin [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Javalin [run].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.javalin [build].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.javalin [run].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -98,6 +99,9 @@
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/zenin/ITMO/javalin/src/main/java/org/example/hexlet/dto/users&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/zenin/ITMO/javalin/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
 }</component>
@@ -113,7 +117,51 @@
       <recent name="org.example.hexlet.dto" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.javalin [run]">
+  <component name="RunManager" selected="Gradle.Javalin [run]">
+    <configuration name="Javalin [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Javalin [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="javalin [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -159,11 +207,15 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Gradle.Javalin [build]" />
+      <item itemvalue="Gradle.Javalin [run]" />
       <item itemvalue="Gradle.javalin [build]" />
       <item itemvalue="Gradle.javalin [run]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Javalin [run]" />
+        <item itemvalue="Gradle.Javalin [build]" />
         <item itemvalue="Gradle.javalin [run]" />
         <item itemvalue="Gradle.javalin [build]" />
       </list>

@@ -3,6 +3,10 @@ package org.example.hexlet.dto;
 
 public class NamedRoutes {
 
+    public static String rootPath() {
+        return "/";
+    }
+
     public static String usersPath() {
         return "/users";
     }

@@ -3,6 +3,7 @@ package org.example.hexlet.dto.controllers;
 import static io.javalin.rendering.template.TemplateUtil.model;
 
 import io.javalin.validation.ValidationException;
+import org.example.hexlet.dto.MainPage;
 import org.example.hexlet.dto.NamedRoutes;
 import org.example.hexlet.dto.courses.CoursePage;
 import org.example.hexlet.dto.courses.CoursesPage;
@@ -21,6 +22,13 @@ import java.util.List;
 import java.util.Optional;
 
 public class CoursesController {
+    public static void root(Context ctx) {
+        var visited = Boolean.valueOf(ctx.cookie("visited"));
+        var page = new MainPage(visited);
+        ctx.render("main.jte", model("page", page));
+        ctx.cookie("visited", String.valueOf(true));
+    }
+
     public static void index(Context ctx) {
         var term = ctx.queryParam("term");
         List<Course> courses;
